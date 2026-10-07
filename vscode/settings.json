@@ -1,0 +1,20 @@
+{
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    "editor.mouseWheelZoom": true,
+    "terminal.integrated.mouseWheelScrollSensitivity": 3,
+    "terminal.integrated.gpuAcceleration": "off",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "terminal.integrated.profiles.linux": {
+        "Zsh": {
+            "path": "/usr/bin/zsh",
+            "args": [
+                "-l"
+            ],
+            "icon": "terminal"
+        }
+    },
+    "terminal.integrated.defaultProfile.linux": "Zsh",
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "terminal.integrated.fontSize": 16
+}

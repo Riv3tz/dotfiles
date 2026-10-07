@@ -1,0 +1,22 @@
+# Private overrides and generated state never belong in this public repo.
+.env
+.env.*
+*.local
+*.local.*
+*.bak
+*.backup
+*.log
+*history*
+.ssh/
+.gnupg/
+.aws/
+.azure/
+.kube/
+credentials*
+*token*
+*.pem
+*.key
+*.p12
+*.pfx
+.DS_Store
+__pycache__/
