@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 repo_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
-for dependency in zsh starship python3; do
+for dependency in zsh python3; do
   command -v "$dependency" >/dev/null || { echo "Missing $dependency; see README.md" >&2; exit 1; }
 done
 for required in "$HOME/.oh-my-zsh/oh-my-zsh.sh" "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"; do
@@ -31,7 +31,6 @@ mappings=[
  ('zsh/.zprofile',home/'.zprofile'),
  ('zsh/themes/agnoster-catppuccin.zsh-theme',home/'.oh-my-zsh/custom/themes/agnoster-catppuccin.zsh-theme'),
  ('ghostty/config.ghostty',config/'ghostty/config.ghostty'),
- ('starship/starship.toml',config/'starship.toml'),
 ]
 for _,dst in mappings+[(None,vscode)]:
     if dst.exists() or dst.is_symlink():

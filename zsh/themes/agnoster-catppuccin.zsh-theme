@@ -41,19 +41,6 @@ _agnoster_catppuccin_precmd() {
 add-zsh-hook preexec _agnoster_catppuccin_preexec
 add-zsh-hook precmd _agnoster_catppuccin_precmd
 
-# Starship remains available solely for contextual runtime detection.
-# Its Zsh output marks colour escapes as nonprinting for correct line wrapping.
-prompt_catppuccin_runtimes() {
-  local runtime output=''
-  for runtime in nodejs bun python rust golang java php; do
-    output+=$(STARSHIP_SHELL=zsh starship module "$runtime" 2>/dev/null)
-  done
-  if [[ -n $output ]]; then
-    print -rn -- " $output"
-    CURRENT_BG='NONE'
-  fi
-}
-
 build_prompt() {
   RETVAL=${_AGNOSTER_LAST_STATUS:-0}
   CURRENT_BG='NONE'
@@ -65,7 +52,6 @@ build_prompt() {
   prompt_git
   prompt_end
   CURRENT_BG='NONE'
-  prompt_catppuccin_runtimes
   [[ -n $_AGNOSTER_DURATION ]] && print -rn -- " %F{#f9e2af}󱎫 $_AGNOSTER_DURATION%f"
   print -rn -- " "
   if (( RETVAL )); then

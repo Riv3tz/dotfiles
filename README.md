@@ -2,7 +2,7 @@
 
 Linux terminal and VS Code setup with Catppuccin Mocha, JetBrains Mono Nerd Font Mono, and an Agnoster powerline prompt on one line.
 
-The prompt shows the current directory, Git branch and working-tree state, relevant runtime versions, failed-command status, background jobs and command duration after two seconds. Oh My Zsh supplies completion and Git helpers; autosuggestions and syntax highlighting use the same palette. Starship is used only to detect contextual runtimes.
+The prompt shows the current directory, Git branch and working-tree state, failed-command status, background jobs and command duration after two seconds. Oh My Zsh supplies completion and Git helpers; autosuggestions and syntax highlighting use the same palette.
 
 ## Ghostty shortcuts
 
@@ -16,7 +16,7 @@ Ghostty uses an opaque Mocha background, 12pt JetBrains Mono Nerd Font Mono and 
 
 ## Prerequisites
 
-Install Zsh, Git, curl, Python 3, [Ghostty](https://ghostty.org), [Starship](https://starship.rs/guide/) and [JetBrains Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases). Install fonts under `~/.local/share/fonts/` and run `fc-cache -f`.
+Install Zsh, Git, curl, Python 3, [Ghostty](https://ghostty.org), [JetBrains Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases). Install fonts under `~/.local/share/fonts/` and run `fc-cache -f`.
 
 For Ubuntu:
 
