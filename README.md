@@ -47,6 +47,10 @@ Reload Ghostty's configuration using Ctrl+Shift+, or restart Ghostty. Open a new
 
 Optional tools already supported in the shell include NVM, pnpm, Rust, OpenCode and LM Studio. Their paths use `$HOME`; absent tools are harmless. Private machine-specific settings can go in `~/.zshrc.local`, which this repository ignores. Existing `~/.profile` is sourced for login shells but is not included here.
 
+## Personal and work GitHub accounts
+
+Keep personal repositories in `~/dev/personal/` and work repositories in `~/dev/work/`. Use separate SSH keys and a folder-specific Git configuration to select the work account and commit email automatically. See [Git clone and account setup](docs/git-clone-setup.md) for setup, clone commands, and identity checks. The dotfiles installer does not configure Git accounts or install SSH keys.
+
 ## Public repository scope
 
 Only the explicitly listed configuration files, installer and documentation are tracked. Credentials, tokens, private keys, environment files, shell history, caches, local overrides and personal Git identity are excluded. No font binaries or third-party plugin repositories are bundled. Review additions before committing; ignore rules do not replace a secrets review.
