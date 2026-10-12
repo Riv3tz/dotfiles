@@ -1,6 +1,6 @@
 # Catppuccin dotfiles
 
-Linux terminal and VS Code setup with Catppuccin Mocha, JetBrains Mono Nerd Font Mono, and an Agnoster powerline prompt on one line.
+Linux terminal and VS Code setup with Catppuccin Mocha, JetBrains Mono Nerd Font, and an Agnoster powerline prompt on one line.
 
 The prompt shows the current directory, Git branch and working-tree state, failed-command status, background jobs and command duration after two seconds. Oh My Zsh supplies completion and Git helpers; autosuggestions and syntax highlighting use the same palette.
 
@@ -11,8 +11,9 @@ The prompt shows the current directory, Git branch and working-tree state, faile
 | Ctrl+T | New tab |
 | Ctrl+Tab | Next tab |
 | Ctrl+Shift+Tab | Previous tab |
+| Ctrl+Enter | Available to shell applications |
 
-Ghostty uses an opaque Mocha background, 12pt JetBrains Mono Nerd Font Mono and Zsh with shell integration. VS Code uses the same shell and font with the Catppuccin Mocha editor theme; its existing terminal shortcuts are retained.
+Ghostty uses the laptop configuration: Catppuccin Mocha, 11pt JetBrains Mono Nerd Font and Zsh. VS Code uses Zsh, JetBrains Mono Nerd Font Mono and the Catppuccin Mocha editor theme; its existing terminal shortcuts are retained.
 
 ## Prerequisites
 

@@ -1,14 +1,13 @@
-# Catppuccin Mocha terminal with Zsh and automatic shell integration.
-theme = Catppuccin Mocha
-font-family = JetBrainsMono Nerd Font Mono
-font-size = 12
-background-opacity = 1
-window-padding-x = 12
-window-padding-y = 10
-command = /usr/bin/zsh
-shell-integration = detect
-
-# Tab navigation (Ctrl+Tab cycles forward, Shift reverses).
+# Tab keybindings
 keybind = ctrl+t=new_tab
 keybind = ctrl+tab=next_tab
 keybind = ctrl+shift+tab=previous_tab
+
+# Shell
+command = /usr/bin/zsh
+
+# Appearance
+theme = Catppuccin Mocha
+font-family = JetBrainsMono Nerd Font
+font-size = 11
+keybind = ctrl+enter=unbind
