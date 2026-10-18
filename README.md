@@ -41,9 +41,19 @@ cd dotfiles
 ./install.sh
 ```
 
-The installer backs up existing files under `~/.local/state/dotfiles-backups/`, installs the shell and terminal configs, and merges the included VS Code settings while retaining unrelated settings and terminal profiles. It installs the official Catppuccin VS Code extension when `code` is available. For VS Code settings containing comments or trailing commas, merge `vscode/settings.json` manually and convert to valid JSON before using the installer. It does not change the system login shell.
+The installer backs up existing files under `~/.local/state/dotfiles-backups/`, installs the shell and terminal configs, installs the `arise` command to `~/.local/bin/`, and merges the included VS Code settings while retaining unrelated settings and terminal profiles. It installs the official Catppuccin VS Code extension when `code` is available. For VS Code settings containing comments or trailing commas, merge `vscode/settings.json` manually and convert to valid JSON before using the installer. It does not change the system login shell.
 
 Reload Ghostty's configuration using Ctrl+Shift+, or restart Ghostty. Open a new terminal or run `exec zsh` to activate the prompt. VS Code settings apply to new integrated terminals.
+
+## Wake the display (`arise`)
+
+`arise` wakes a blanked GNOME session. It drives Mutter's `PowerSaveMode` over the session bus (off, then on) so the monitor is forced to re-sync and wake, then clears the screen saver:
+
+```sh
+arise
+```
+
+The installer places the POSIX `sh` script at `~/.local/bin/arise`, which is already on the Bash and Zsh `PATH`. It needs `gdbus` (Ubuntu package `libglib2.0-bin`) and a running GNOME session; useful over SSH or from a script when the display has powered down.
 
 Optional tools already supported in the shell include NVM, pnpm, Rust, OpenCode and LM Studio. Their paths use `$HOME`; absent tools are harmless. Private machine-specific settings can go in `~/.zshrc.local`, which this repository ignores. Existing `~/.profile` is sourced for login shells but is not included here.
 

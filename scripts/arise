@@ -1,0 +1,34 @@
+#!/bin/sh
+# arise - wake a blanked GNOME desktop session.
+#
+# Cycles Mutter's PowerSaveMode over the session bus (3 = off, then 0 = on) so
+# the monitor is forced to re-sync, then clears the screen saver. Useful over
+# SSH or from a script when the display has powered down.
+set -eu
+
+if ! command -v gdbus >/dev/null 2>&1; then
+  echo 'arise: gdbus not found; install it (Ubuntu: libglib2.0-bin) and retry.' >&2
+  exit 1
+fi
+
+set_display_power_save_mode() {
+  gdbus call --session \
+    --dest org.gnome.Mutter.DisplayConfig \
+    --object-path /org/gnome/Mutter/DisplayConfig \
+    --method org.freedesktop.DBus.Properties.Set \
+    org.gnome.Mutter.DisplayConfig \
+    PowerSaveMode \
+    "$1"
+}
+
+# Force the display off, then back on, so the wake path runs instead of a no-op.
+set_display_power_save_mode "<int32 3>"
+sleep 1
+set_display_power_save_mode "<int32 0>"
+
+# Clear screen blanking.
+gdbus call --session \
+  --dest org.gnome.ScreenSaver \
+  --object-path /org/gnome/ScreenSaver \
+  --method org.gnome.ScreenSaver.SetActive \
+  false

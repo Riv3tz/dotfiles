@@ -31,6 +31,7 @@ mappings=[
  ('zsh/.zprofile',home/'.zprofile'),
  ('zsh/themes/agnoster-catppuccin.zsh-theme',home/'.oh-my-zsh/custom/themes/agnoster-catppuccin.zsh-theme'),
  ('ghostty/config.ghostty',config/'ghostty/config.ghostty'),
+ ('scripts/arise',home/'.local/bin/arise'),
 ]
 for _,dst in mappings+[(None,vscode)]:
     if dst.exists() or dst.is_symlink():
@@ -42,6 +43,7 @@ for src,dst in mappings:
     dst.parent.mkdir(parents=True,exist_ok=True)
     if dst.is_symlink(): dst.unlink()
     shutil.copy2(repo/src,dst)
+os.chmod(home/'.local/bin/arise',0o755)
 # Use the detected Zsh path on other Linux installations.
 ghostty=config/'ghostty/config.ghostty'
 ghostty.write_text(ghostty.read_text().replace('command = /usr/bin/zsh','command = '+shutil.which('zsh')))
@@ -49,7 +51,7 @@ existing['terminal.integrated.profiles.linux']['Zsh']['path']=shutil.which('zsh'
 vscode.parent.mkdir(parents=True,exist_ok=True)
 if vscode.is_symlink(): vscode.unlink()
 vscode.write_text(json.dumps(existing,indent=4)+'\n')
-print('Installed shell, Ghostty and VS Code settings.')
+print('Installed shell, Ghostty and VS Code settings, and the arise command.')
 print('Backups:',backup)
 PY
 zsh -n "$HOME/.zshrc"
